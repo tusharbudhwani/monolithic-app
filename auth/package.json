@@ -46,11 +46,7 @@
     "typescript": "^5.7.3"
   },
   "lint-staged": {
-    "src/**/*.ts": [
-      "eslint .",
-      "prettier --write .",
-      "git add"
-    ]
+    "src/**/*.ts": ["eslint .", "prettier --write .", "git add"]
   },
   "husky": {
     "hooks": {
