@@ -10,7 +10,11 @@
     "prettier:fix": "prettier --write ./src/**/*.ts",
     "start:dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "preset": "ts-jest"
   },
   "keywords": [],
   "author": "Tushar Parmanand Budhwani",
@@ -28,7 +32,9 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.13.0",
+    "@types/supertest": "^6.0.2",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -48,12 +54,12 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "npm run prettier:fix", "npm run lint", "git add"
+      "npm run prettier:fix",
+      "npm run lint",
+      "git add"
     ]
   },
-  
   "pre-commit": "lint-staged",
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
