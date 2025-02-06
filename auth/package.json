@@ -10,7 +10,8 @@
     "prettier:fix": "prettier --write .",
     "start:dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
-    "test": "jest --watchAll --no-cache"
+    "test": "jest",
+    "test:watch": "jest --watchAll --no-cache"
   },
   "jest": {
     "testEnvironment": "node",
@@ -58,6 +59,7 @@
     "src/**/*.ts": [
       "npm run prettier:fix",
       "npm run lint",
+      "npm run test",      
       "git add"
     ]
   },
