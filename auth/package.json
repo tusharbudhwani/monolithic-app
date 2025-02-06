@@ -5,12 +5,12 @@
   "scripts": {
     "precommit": "lint-staged",
     "build": "npx tsc",
-    "lint": "eslint src/**/*.ts",
-    "prettier": "prettier --check ./src/**/*.ts",
-    "prettier:fix": "prettier --write ./src/**/*.ts",
+    "lint": "eslint .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "start:dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test": "jest --watchAll --no-cache"
   },
   "jest": {
     "testEnvironment": "node",
@@ -21,9 +21,11 @@
   "license": "ISC",
   "description": "This is the Authentication microservice for the Social Media Application.",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-validator": "^7.2.1",
     "mongodb": "^6.13.0",
     "mongoose": "^8.9.6",
     "nodemon": "^3.1.9",
